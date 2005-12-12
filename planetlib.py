@@ -321,9 +321,9 @@ class Channel:
         elif fmt is None:
             fmt = "%B %d, %Y %I:%M %p"
 
-        '''Show date/time in Turkish - caglar10ur'''
-    	import locale
-    	locale.setlocale( locale.LC_ALL, "tr_TR.UTF-8")
+#        '''Show date/time in Turkish - caglar10ur'''
+#    	import locale
+#    	locale.setlocale( locale.LC_ALL, "tr_TR.UTF-8")
         
     	return time.strftime(fmt, time.gmtime(self.utctime(date)))
 
