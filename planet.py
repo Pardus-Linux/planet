@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
     # Sort the channels list by name
     channel_list = channels.values()
-    locale.setlocale(locale.LC_ALL,"tr_TR.UTT-8")
+    locale.setlocale(locale.LC_ALL,"tr_TR.UTF-8")
     channel_list.sort(key=locale.strxfrm)
     locale.setlocale(locale.LC_ALL,"C")    
 
