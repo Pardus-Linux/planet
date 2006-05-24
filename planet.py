@@ -14,6 +14,7 @@ __license__ = "Python"
 import sys
 import time
 import os
+import locale
 
 try:
     import logging
@@ -146,7 +147,9 @@ if __name__ == "__main__":
 
     # Sort the channels list by name
     channel_list = channels.values()
-    channel_list.sort(lambda x,y: cmp(x["name"], y["name"]))
+    locale.setlocale(locale.LC_ALL,"tr_TR.UTT-8")
+    channel_list.sort(key=locale.strxfrm)
+    locale.setlocale(locale.LC_ALL,"C")    
 
 
     # Go-go-gadget-template
