@@ -12,7 +12,7 @@
 <head>
 <title><TMPL_VAR name></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link REL="alternate" TITLE="Planet Security" HREF="/rss20.xml" TYPE="application/rss+xml">
+<link REL="alternate" TITLE="Planet Pardus" HREF="/rss20.xml" TYPE="application/rss+xml">
 </head>
 
 <body>
@@ -25,6 +25,15 @@
 </TMPL_IF>
 
 <TMPL_IF new_channel>
+
+### Planet provides template variables for *all* configuration options for
+### the channel (and defaults), even if it doesn't know about them.  We
+### exploit this here to add hackergotchi faces to our channels.  Planet
+### doesn't know about the "face", "facewidth" and "faceheight" configuration
+### variables, but makes them available to us anyway.
+<h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+</TMPL_IF>
+
 
 <TMPL_IF title>
 <h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
@@ -41,7 +50,6 @@
 
 
 <div class="sidebar">
-
 <h2>Writers</h2>
 <ul>
 <TMPL_LOOP Channels>
